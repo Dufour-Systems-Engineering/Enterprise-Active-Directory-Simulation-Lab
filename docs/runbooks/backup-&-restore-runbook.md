@@ -15,7 +15,7 @@ Before major changes (such as bulk GPO deployments), named restore points were c
 
 ### Creation Procedure (Azure Portal)
 1. Navigate to **Virtual Machines** → `windowsserver1` → **Restore Points** and prepare to create a new backup state.  
-   * *See Evidence:* [01-restore-point-creation-before.png](../..screenshots/backup-restore/01-restore-point-creation-before.png)
+   * *See Evidence:* [01-restore-point-creation-before.png](../../screenshots/backup-restore/01-restore-point-creation-before.png)
 2. Click **+ Create** and enter a descriptive, dated name (e.g., `pre-gpo-bulk-script-implementation-point-5-5-2026`).  
    * *See Evidence:* [02-restore-point-name-and-date.png](screenshots/backup-restore/02-restore-point-name-and-date.png)
 3. Proceed to the validation stage by selecting the validation controls.  
