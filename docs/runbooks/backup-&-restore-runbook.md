@@ -15,15 +15,19 @@ Before major changes (such as bulk GPO deployments), named restore points were c
 
 ### Creation Procedure (Azure Portal)
 1. Navigate to **Virtual Machines** → `windowsserver1` → **Restore Points** and prepare to create a new backup state.  
-   * *See Evidence:* [01-restore-point-creation-before.png](../../screenshots/backup-restore/01-restore-point-creation-before.png)
-2. Click **+ Create** and enter a descriptive, dated name (e.g., `pre-gpo-bulk-script-implementation-point-5-5-2026`).  
-   * *See Evidence:* [02-restore-point-name-and-date.png](screenshots/backup-restore/02-restore-point-name-and-date.png)
-3. Proceed to the validation stage by selecting the validation controls.  
-   * *See Evidence:* [03-restore-point-click-review-&-create.png](screenshots/backup-restore/03-restore-point-click-review-&-create.png)
-4. Click **Create** to execute the Azure Resource Manager deployment loop.  
-   * *See Evidence:* [04-restore-point-click-create-png.png](screenshots/backup-restore/04-restore-point-click-create-png.png)
-5. Monitor the resource blade to confirm a successful deployment.  
-   * *See Evidence:* [05-restore-point-verify-successful-deployment.png](screenshots/backup-restore/05-restore-point-verify-successful-deployment.png)
+   * *See Evidence:* [01-restore-point-creation-before.png](../../screenshots/backup-and-restore/01-restore-point-creation-before.png)
+
+2. Click **+ Create** and enter a descriptive, dated name...  
+   * *See Evidence:* [02-restore-point-name-and-date.png](../../screenshots/backup-and-restore/02-restore-point-name-and-date.png)
+
+3. Proceed to the validation stage...  
+   * *See Evidence:* [03-restore-point-click-review-&-create.png](../../screenshots/backup-and-restore/03-restore-point-click-review-&-create.png)
+
+4. Click **Create**...  
+   * *See Evidence:* [04-restore-point-click-create-png.png](../../screenshots/backup-and-restore/04-restore-point-click-create-png.png)
+
+5. Monitor the resource blade...  
+   * *See Evidence:* [05-restore-point-verify-successful-deployment.png](../../screenshots/backup-and-restore/05-restore-point-verify-successful-deployment.png)
 
 ---
 
