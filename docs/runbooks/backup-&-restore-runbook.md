@@ -24,7 +24,7 @@ Before major changes (such as bulk GPO deployments), named restore points were c
    * *See Evidence:* [03-restore-point-click-review-&-create.png](../../screenshots/backup-and-restore/03-restore-point-click-review-&-create.png)
 
 4. Click **Create**...  
-   * *See Evidence:* [04-restore-point-click-create-png.png](../../screenshots/backup-and-restore/04-restore-point-click-create.png)
+   * *See Evidence:* [04-restore-point-click-create.png](../../screenshots/backup-and-restore/04-restore-point-click-create.png)
 
 5. Monitor the resource blade...  
    * *See Evidence:* [05-restore-point-verify-successful-deployment.png](../../screenshots/backup-and-restore/05-restore-point-verify-successful-deployment.png)
