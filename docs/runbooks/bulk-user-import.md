@@ -97,9 +97,9 @@ To audit the active directory baseline scale and confirm all accounts are succes
 
 ### Troubleshooting Archive (Artifact Logs)
 * **Syntax Parameter Exceptions:** [07-error-log-password-syntax.png](../../screenshots/bulk-user-import/07-error-log-password-syntax.png)
-* **Collision Exceptions:** [08-error-log-account-collision.png](../../screenshots/bulk-user-import/08-error-log-account-collision.png) and [09-error-log-object-collision.png](../../screenshots/bulk-user-import/09-error-log-object-collision.png)
-* **Identity Scope Conflicts:** [10-error-log-upn-uniqueness.png](../../screenshots/bulk-user-import/10-error-log-upn-uniqueness.png)
-* **Dynamic Path Correction Logic:** [11-dynamic-ou-path-cleansing.png](../../screenshots/bulk-user-import/11-dynamic-ou-path-cleansing.png)
+* **Collision Exceptions:** [08-error-log-object-collision.png](../../screenshots/bulk-user-import/08-error-log-object-collision.png) and [09-error-log-upn-uniqueness.png](../../screenshots/bulk-user-import/09-error-log-upn-uniqueness.png)
+* **Identity Scope Conflicts:** [09-error-log-upn-uniqueness.png](../../screenshots/bulk-user-import/09-error-log-upn-uniqueness.png)
+* **Dynamic Path Correction Logic:** [10-dynamic-ou-path-cleansing.png](../../screenshots/bulk-user-import/10-dynamic-ou-path-cleansing.png)
 
 ---
 ## Lessons Learned
