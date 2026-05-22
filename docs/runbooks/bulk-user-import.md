@@ -33,7 +33,7 @@ A small test set (10–50 users) would not have provided enough scale or complex
 | department         | Custom list (HR, Help Desk, Sales, Engineering, etc.)       | Department attribute                          |
 | job_title          | Job Title (built-in)                                         | Title attribute                               |
 
-> **Data Architecture Reference:** > For a visual layout of the raw imported schema parameters before processing, see the live data blueprint: [01-mockaroo-raw-csv-schema.png](screenshots/bulk-user-import/01-mockaroo-raw-csv-schema.png).
+> **Data Architecture Reference:** > For a visual layout of the raw imported schema parameters before processing, see the live data blueprint: [01-mockaroo-raw-csv-schema.png](../..screenshots/bulk-user-import/01-mockaroo-raw-csv-schema.png).
 
 ---
 
