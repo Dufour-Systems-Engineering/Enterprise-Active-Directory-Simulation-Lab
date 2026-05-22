@@ -19,9 +19,9 @@ The project was built to simulate real corporate Active Directory Domain Service
 * **[architecture/](architecture/)** — Conceptual domain design blueprints, infrastructure mapping, and visual topology.
 * **[docs/](docs/)** — Core engineering documentation
   * **[runbooks/](docs/runbooks/README.md)** — (Recommended starting point) Step-by-step administrative execution guides, logic verification, and project roadmaps.
-  * `delegation/` — Least-privilege administrative boundary definitions and RBAC rules.
-  * `gpo/` — Baseline policy configurations, registry overrides, and client enforcement rulesets.
-  * `troubleshooting/` — Infrastructure platform error analysis and root-cause logs *(content prepared and being polished)*.
+  - **[delegation/](docs/delegation/)** — Least-privilege administrative boundary definitions and RBAC rules.
+  - **[gpo/](docs/gpo/)** — Baseline policy configurations, registry overrides, and client enforcement rulesets.
+  - **[troubleshooting/](docs/troubleshooting/)** — Infrastructure platform error analysis and root-cause logs *(content prepared and being polished)*.
 * **[evidence/](evidence/)** → Supporting artifacts, logs, exports, and hard proof *(content prepared and being polished)*.
 * **[screenshots/](screenshots/)** → Organized visual evidence of every major configuration step.
 * **[scripts/](scripts/)** → Reusable PowerShell automation modules and account ingestion loops *(content prepared and being polished)*.
