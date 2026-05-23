@@ -1,3 +1,8 @@
+**✅ GPO Management Runbook – All Screenshot Links Fixed**
+
+Copy the entire block below and replace the content of **`docs/runbooks/gpo-management-runbook.md`**:
+
+```markdown
 # Group Policy Object (GPO) Management Runbook
 
 **Last Updated:** May 22, 2026  
@@ -96,14 +101,17 @@ All changes were preceded by rigorous pre-flight checks and Azure restore points
 ```powershell
 Get-GPO -Name "Engineering-Users" | Select DisplayName, GpoStatus, CreationTime, ModificationTime
 gpresult /h gpo-report.html /scope user
+```
 
-Lessons Learned
+---
 
-Pre-flight checks and Azure restore points are non-negotiable.
-Scripted GPO deployment is dramatically faster than GUI.
-Documenting both manual and automated methods shows depth.
+## Lessons Learned
 
-Related Files
+- Pre-flight checks and Azure restore points are non-negotiable.
+- Scripted GPO deployment is dramatically faster than GUI.
+- Documenting both manual and automated methods shows depth.
 
-OU Management Runbook
-Group Management Runbook
+**Related Files**
+- [OU Management Runbook](../ou-management-runbook.md)
+- [Group Management Runbook](../group-management-runbook.md)
+```
