@@ -1,11 +1,27 @@
 # CHANGELOG
 
-All notable changes to the Active Directory Domain Services (AD DS) Lab Portfolio will be documented in this file.
+## [2026-05-23] - Troubleshooting Section Launch + Evidence Organization
 
-## [Unreleased]
-- Remaining runbooks (Engineering User Onboarding, Tier 1 Support Delegation, User Onboarding)
-- Full population and polishing of `evidence/`, `scripts/`, and `troubleshooting/` folders
-- Final Related Files cross-linking sweep across all documents
+### Added
+- Launched the **Troubleshooting** section with 5 polished articles following the **AD Portfolio Runbook Template (APRT)**:
+  - `sdesk-1-ad-password-reset-finance-user.md`
+  - `sdesk-2-finance-user-workstation-authentication-failure.md`
+  - `sdesk-3-ad-share-access-denied.md`
+  - `sdesk-4-eng-dept-share-folder-rw-permission-issue.md`
+  - `sdesk-5-finance-control-panel-restriction-gpo-scope-mismatch-report.md`
+
+- Fully structured the **Evidence** folder:
+  - `raw-tickets/` — Contains the 5 original raw SDESK service desk tickets
+  - `jira-project-export-pdfs/` — Contains the 5 corresponding Jira export PDFs
+
+- Created dedicated screenshot folders under `screenshots/troubleshooting/` for each SDESK issue.
+
+### Improvements
+- All troubleshooting documents now follow consistent professional structure with visual evidence and lessons learned.
+- Established organized supporting artifact structure for raw tickets and Jira exports.
+
+**Status:** Troubleshooting and Evidence sections now active and organized.
+
 
 ## [2026-05-22] – Initial Public Release (v1.0 Baseline)
 
@@ -27,6 +43,10 @@ This is the first public commit of the AD DS Lab portfolio. It showcases a reali
 **Currently Complete:** 9 runbooks + major supporting folders  
 **Status:** Initial public baseline — live progress tracking begins today.
 
+## [Unreleased]
+- Remaining runbooks (Engineering User Onboarding, Tier 1 Support Delegation, User Onboarding)
+- Full population and polishing of `evidence/`, `scripts/`, and `troubleshooting/` folders
+- Final Related Files cross-linking sweep across all documents
 ---
 
 **How future entries will appear:**  

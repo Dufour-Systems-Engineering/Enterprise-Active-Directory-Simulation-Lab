@@ -11,41 +11,46 @@ The project was built to simulate real corporate Active Directory Domain Service
 - **Architecture** — Scalable OU hierarchy design with departmental separation, delegation boundaries, and full AGDLP group nesting model for least-privilege access control, supported by clear diagrams and detailed design rationale.
 - **Delegation** — Hands-on least-privilege delegation for Tier 1 Help Desk accounts, including positive/negative testing, cross-OU user moves, and the “Three Locks” troubleshooting methodology.
 - **GPO Management** — Comprehensive Group Policy implementation featuring pre-flight verification, manual GUI configuration (Sales), and full automated PowerShell rollout (Engineering) for wallpaper, drive mapping, folder redirection, taskbar layout, and security baselines.
+- **Troubleshooting** — Real-world break/fix scenarios covering password resets, authentication failures, share permission issues, and GPO scoping problems — fully documented with root cause analysis and resolution steps.
 - **Runbooks** — Detailed, step-by-step runbooks covering OU management, group management, bulk user import, domain join, network share setup, backup & restore, and more — all with screenshots, verification commands, lessons learned, and real-world context.
-- **Supporting Components** — Evidence artifacts, reusable PowerShell scripts, and troubleshooting documentation (content prepared and currently being polished).
 
 ### 📁 Project Structure & Navigation
 
 * **[architecture/](architecture/)** — Conceptual domain design blueprints, infrastructure mapping, and visual topology.
 * **[docs/](docs/)** — Core engineering documentation
   * **[runbooks/](docs/runbooks/README.md)** — (Recommended starting point) Step-by-step administrative execution guides, logic verification, and project roadmaps.
-  - **[delegation/](docs/delegation/)** — Least-privilege administrative boundary definitions and RBAC rules.
-  - **[gpo/](docs/gpo/)** — Baseline policy configurations, registry overrides, and client enforcement rulesets.
-  - **[troubleshooting/](docs/troubleshooting/)** — Infrastructure platform error analysis and root-cause logs *(content prepared and being polished)*.
-* **[evidence/](evidence/)** → Supporting artifacts, logs, exports, and hard proof *(content prepared and being polished)*.
-* **[screenshots/](screenshots/)** → Organized visual evidence of every major configuration step.
-* **[scripts/](scripts/)** → Reusable PowerShell automation modules and account ingestion loops *(content prepared and being polished)*.
-* **[CHANGELOG.md](CHANGELOG.md)** → Comprehensive record of project updates, environment modifications, and version controls.
+  * **[delegation/](docs/delegation/)** — Least-privilege administrative boundary definitions and RBAC rules.
+  * **[gpo/](docs/gpo/)** — Baseline policy configurations, registry overrides, and client enforcement rulesets.
+  * **[troubleshooting/](docs/troubleshooting/)** — Real-world and simulated break/fix scenarios with root cause analysis *(5 articles published as of May 23, 2026 — actively expanding)*.
+* **[evidence/](evidence/)** — Supporting artifacts and raw documentation:
+  * `raw-tickets/` — Original raw SDESK service desk tickets
+  * `jira-project-export-pdfs/` — Exported Jira tickets and project data
+* **[screenshots/](screenshots/)** — Organized visual evidence of every major configuration step.
+* **[scripts/](scripts/)** — Reusable PowerShell automation modules and account ingestion loops *(content prepared and being polished)*.
+* **[CHANGELOG.md](CHANGELOG.md)** — Comprehensive record of project updates, environment modifications, and version controls.
 
 ### Current Status & Roadmap
 
 **This portfolio is actively maintained.**  
 New runbooks, evidence files, scripts, and troubleshooting articles are added as they are completed to show real-time progress to recruiters and hiring managers.
 
-**Completed as of May 22, 2026:**
+**Completed as of May 23, 2026:**
 - Architecture folder
 - Delegation folder
 - GPO folder
 - Runbooks folder (9 completed runbooks)
+- Troubleshooting folder (5 polished articles)
+- Evidence folder structure with raw tickets and Jira exports
 
 **In Progress / Content Ready:**
 - Remaining runbooks (Engineering User Onboarding, Tier 1 Support Delegation, User Onboarding)
-- Full `evidence/`, `scripts/`, and `troubleshooting/` folders (content prepared and currently being polished)
+- Additional troubleshooting articles
+- Full `scripts/` folder
 
 Every new file will be committed immediately upon completion so you can watch the portfolio grow live.
 
-**Last Updated:** May 22, 2026  
-**Status:** Initial public release (baseline with major sections complete)
+**Last Updated:** May 23, 2026  
+**Status:** Initial public release + Troubleshooting & Evidence sections launched
 
 ---
 
