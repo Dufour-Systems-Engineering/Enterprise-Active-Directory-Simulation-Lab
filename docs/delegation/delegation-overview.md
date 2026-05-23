@@ -38,7 +38,7 @@ Although some screenshots and testing (particularly KAN-98) show HelpdeskNew per
 - Positive testing in isolated Test OU; negative testing in production departments.
 
 ## Related Files
--[Helpdesk Delegation Testing Results](helpdesk-delegation-testing-results.md)
+- [Helpdesk Delegation Testing Results](helpdesk-delegation-testing-results.md)
 - [Delegate User Moves](delegate-user-moves.md)
 - [Helpdesk Delegation Runbook](../runbooks/helpdesk-delegation-runbook.md)
 

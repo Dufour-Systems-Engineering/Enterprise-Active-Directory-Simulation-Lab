@@ -1,5 +1,3 @@
-**Here is the cleaned-up version:**
-
 ### 4. `docs/gpo/gpo-backup-manifest.md`
 
 ```markdown
