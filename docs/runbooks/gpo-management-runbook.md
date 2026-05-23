@@ -1,8 +1,3 @@
-**✅ GPO Management Runbook – All Screenshot Links Fixed**
-
-Copy the entire block below and replace the content of **`docs/runbooks/gpo-management-runbook.md`**:
-
-```markdown
 # Group Policy Object (GPO) Management Runbook
 
 **Last Updated:** May 22, 2026  
