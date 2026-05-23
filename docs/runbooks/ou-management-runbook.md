@@ -5,9 +5,7 @@
 
 ## 1. Final OU Hierarchy
 
-
 ```
-
 lab.local
 ├── Accounts
 │   ├── Engineering
@@ -33,10 +31,9 @@ lab.local
 ├── Groups
 ├── Workstations
 └── Servers
-
 ```
 
-> **Directory Architecture Reference:** > For a full operational snapshot of the expanded Active Directory tree layout, see the environment blueprint: [01-ou-hierarchy-full.png](screenshots/ou-management/01-ou-hierarchy-full.png).
+*See Evidence:* [01-ou-hierarchy-full.png](../../screenshots/ou-management/01-ou-hierarchy-full.png)
 
 ---
 
@@ -56,10 +53,11 @@ The OU structure was deliberately designed to emulate a realistic small-to-mid-s
 
 ### GUI Method
 1. Open `dsa.msc`
-2. Right-click parent container → **New** → **Organizational Unit** * *See Evidence:* [02-creating-ou-gui.png](screenshots/ou-management/02-creating-ou-gui.png)
+2. Right-click parent container → **New** → **Organizational Unit**  
+   * *See Evidence:* [02-creating-ou-gui.png](../../screenshots/ou-management/02-creating-ou-gui.png)
 3. Enter name
 4. Check **Protect object from accidental deletion** (recommended for production)  
-   * *See Evidence:* [03-protect-from-deletion-checkbox.png](screenshots/ou-management/03-protect-from-deletion-checkbox.png)
+   * *See Evidence:* [03-protect-from-deletion-checkbox.png](../../screenshots/ou-management/03-protect-from-deletion-checkbox.png)
 
 ### PowerShell Method
 ```powershell
@@ -72,7 +70,6 @@ New-ADOrganizationalUnit -Name "Engineering" `
 New-ADOrganizationalUnit -Name "Users" `
                          -Path "OU=Engineering,OU=Accounts,DC=lab,DC=local" `
                          -ProtectedFromAccidentalDeletion $true
-
 ```
 
 ---
@@ -82,16 +79,13 @@ New-ADOrganizationalUnit -Name "Users" `
 ```powershell
 Rename-ADObject -Identity "OU=Help_Desk,OU=Accounts,DC=lab,DC=local" -NewName "HelpDesk"
 Rename-ADObject -Identity "OU=It_Admins,OU=Accounts,DC=lab,DC=local" -NewName "IT_Admins"
-
 ```
 
-> **Object Modification Logs:** > The workflow state immediately preceding and following a container rename can be reviewed at [04-rename-ou-before.png](https://www.google.com/search?q=screenshots/ou-management/04-rename-ou-before.png) and [05-rename-ou-after.png](https://www.google.com/search?q=screenshots/ou-management/05-rename-ou-after.png).
+*See Evidence:* [04-rename-ou-before.png](../../screenshots/ou-management/04-rename-ou-before.png) and [05-rename-ou-after.png](../../screenshots/ou-management/05-rename-ou-after.png)
 
 ---
 
 ## 5. Protect from Accidental Deletion ("The Three Locks")
-
-This flag was the #1 cause of "Access is denied" errors during object moves. Objects must be unlocked across multiple scopes to safely complete a migration.
 
 ```powershell
 # Disable protection on target OU
@@ -99,25 +93,21 @@ Set-ADOrganizationalUnit -Identity "OU=Users,OU=TEST,OU=Accounts,DC=lab,DC=local
 
 # Disable on user object
 Set-ADObject -Identity "CN=TestMove,OU=Users,OU=TEST,OU=Accounts,DC=lab,DC=local" -ProtectedFromAccidentalDeletion $false
-
 ```
 
-> **Object Migration Tracking:** > For step-by-step verification logs of moving active directory security principals across paths, see [06-move-object-before.png](https://www.google.com/search?q=screenshots/ou-management/06-move-object-before.png) and [07-move-object-after.png](https://www.google.com/search?q=screenshots/ou-management/07-move-object-after.png).
+*See Evidence:* [06-move-object-before.png](../../screenshots/ou-management/06-move-object-before.png) and [07-move-object-after.png](../../screenshots/ou-management/07-move-object-after.png)
 
 ---
 
 ## 6. Verification
 
-To verify that all structural OUs have populated correctly and audit their respective deletion protection values domain-wide, run the following pipe:
-
 ```powershell
 Get-ADOrganizationalUnit -Filter * | 
   Select Name, DistinguishedName, ProtectedFromAccidentalDeletion | 
   Sort DistinguishedName | Format-Table -AutoSize
-
 ```
 
-> **Automated Audit Output:** > The table output returned by this verification command is logged at [08-verification-get-adou.png](https://www.google.com/search?q=screenshots/ou-management/08-verification-get-adou.png).
+*See Evidence:* [08-verification-get-adou.png](../../screenshots/ou-management/08-verification-get-adou.png)
 
 ---
 
@@ -130,19 +120,18 @@ Get-ADOrganizationalUnit -Filter * |
 | Move still fails after clearing flags | Missing Delete/Create Child rights | Re-run Delegation of Control Wizard |
 | Cannot delete OU | Child objects present | Use `-Recursive` flag after disabling protection |
 
-### Multi-Lock Exception Analysis
-
-When resolving deep permission inheritance and accidental deletion bugs during cross-container operations, use the administrative property sheets to verify the scope blocks:
-
-* **Source/Object Locking States:** See [09a-three-locks-troubleshooting.png](https://www.google.com/search?q=screenshots/ou-management/09a-three-locks-troubleshooting.png)
-* **Active Security Descriptors:** See [09b-three-locks-troubleshooting.png](https://www.google.com/search?q=screenshots/ou-management/09b-three-locks-troubleshooting.png)
-* **Destination Boundary Audits:** See [09c-three-locks-troubleshooting.png](https://www.google.com/search?q=screenshots/ou-management/09c-three-locks-troubleshooting.png)
+*See Evidence:*  
+- [09a-three-locks-troubleshooting.png](../../screenshots/ou-management/09a-three-locks-troubleshooting.png)  
+- [09b-three-locks-troubleshooting.png](../../screenshots/ou-management/09b-three-locks-troubleshooting.png)  
+- [09c-three-locks-troubleshooting.png](../../screenshots/ou-management/09c-three-locks-troubleshooting.png)
 
 ---
 
 ## Related Files
 
-* [Domain Join Runbook](https://www.google.com/search?q=domain-join-runbook.md)
-* [Group Management Runbook](https://www.google.com/search?q=group-management-runbook.md)
-* [Delegation Overview](https://www.google.com/search?q=../delegation/delegation-overview.md)
-* [GPO Overview](https://www.google.com/search?q=../gpo/gpo-overview.md)
+* [Domain Join Runbook](../domain-join-runbook.md)
+* [Group Management Runbook](../group-management-runbook.md)
+* [Delegation Overview](../delegation/delegation-overview.md)
+* [GPO Overview](../gpo/gpo-overview.md)
+```
+
