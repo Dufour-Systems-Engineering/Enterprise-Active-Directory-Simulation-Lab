@@ -1,6 +1,3 @@
-### 4. `docs/gpo/gpo-backup-manifest.md`
-
-```markdown
 # GPO Backup Manifest
 
 **Last Updated:** May 19, 2026  
