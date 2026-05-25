@@ -22,9 +22,7 @@ The project was built to simulate real corporate Active Directory Domain Service
   * **[delegation/](./docs/delegation/)** — Two-tier Help Desk & IT Admin delegation model, testing results, and future expansion plans.
   * **[gpo/](docs/gpo/)** — Baseline policy configurations, registry overrides, and client enforcement rulesets.
   * **[troubleshooting/](./docs/troubleshooting/)** — Real break/fix scenarios and resolutions (e.g., RDP access issues, permission problems). *(6 articles published as of May 25, 2026 — actively expanding)*.
-* **[evidence/](evidence/)** — Supporting artifacts and raw documentation:
-  * `raw-tickets/` — Original raw SDESK service desk tickets
-  * `jira-project-export-pdfs/` — Exported Jira tickets and project data
+* **[evidence/](evidence/)** — Supporting artifacts and raw documentation (raw tickets, Jira exports, verification logs, etc.).
 * **[screenshots/](screenshots/)** — Organized visual evidence of every major configuration step.
 * **[scripts/](scripts/)** — Reusable PowerShell automation modules and account ingestion loops *(content prepared and being polished)*.
 * **[CHANGELOG.md](CHANGELOG.md)** — Comprehensive record of project updates, environment modifications, and version controls.
