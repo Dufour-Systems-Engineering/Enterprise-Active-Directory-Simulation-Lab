@@ -1,36 +1,28 @@
 # Helpdesk Delegation Testing Results
-
-**Date:** April 29–30, 2026  
-**Purpose:** Validate least-privilege delegation using `HelpdeskNew` as the pilot account on the isolated Test OU.
-
-## Test Scope
-- Account: `HelpdeskNew` (member of `GG_HelpDesk_Users`)
-- Target OU: `OU=Users,OU=Test,OU=Accounts,DC=lab,DC=local`
+**Date:** April 29 – May 4, 2026
+**Purpose:** Validate the two-tier delegation model using `HelpdeskNew` (member of `GG_HelpDesk_Users`) as the pilot account, primarily on the isolated Test OU.
 
 ## Test Results
+| Permission                  | Test OU Result      | Other OUs Result     | Status |
+|-----------------------------|---------------------|----------------------|--------|
+| Reset Password              | ✅ Success          | ✅ Access Denied     | Pass   |
+| Unlock Account              | ✅ Success          | ✅ Access Denied     | Pass   |
+| Modify User Properties      | ✅ Success          | ✅ Access Denied     | Pass   |
+| Create User                 | ✅ Success (Pilot)  | ✅ Access Denied     | Pass   |
+| Delete User                 | ✅ Success (Pilot)  | ✅ Access Denied     | Pass   |
+| Move User Between OUs       | ✅ Success (Pilot)  | ✅ Access Denied     | Pass   |
 
-| Permission                    | Test OU Result | Other OUs Result | Status |
-|-------------------------------|----------------|------------------|--------|
-| Reset Password                | ✅ Success      | ✅ Access Denied | Pass   |
-| Unlock Account                | ✅ Success      | ✅ Access Denied | Pass   |
-| Modify User Properties        | ✅ Success      | ✅ Access Denied | Pass   |
-| Create User                   | ✅ Success      | ✅ Access Denied | Pass   |
-| Delete User                   | ✅ Success      | ✅ Access Denied | Pass   |
-| Move User                     | ✅ Success      | ✅ Access Denied | Pass   |
+## Pilot vs. Final Scope
+Early testing temporarily granted broader permissions on the pilot account to validate core mechanics. In the final implementation, `GG_HelpDesk_Users` is restricted to password reset, unlock, and property modification. Create, delete, and move operations are reserved exclusively for `GG_IT_Admins`.
 
-## Important Scope Clarification
-While the screenshots and testing in this document show `HelpdeskNew` successfully performing user creation, deletion, and moves, **these operations were conducted only during the pilot/testing phase**.  
+## Operational Lessons Learned
+- The Delegation of Control Wizard produces cleaner, more maintainable ACLs than manual PowerShell ACE construction.
+- Cross-OU moves require permissions on both source and target OUs.
+- "Protect from accidental deletion" must be disabled on relevant containers for moves to succeed.
+- Delegation changes often require session refresh (`runas` or logoff/logon) to take effect.
+- The isolated Test OU was critical for safely identifying edge cases.
 
-In the **final production design**, **Create**, **Delete**, and **Move** permissions are reserved exclusively for `GG_IT_Admins`.  
-`GG_HelpDesk_Users` was used as the test/pilot account to validate the delegation process and identify issues before applying strict least-privilege rules.
+These results confirm the two-tier model performs reliably and highlight important operational realities of delegated administration.
 
-## Lessons Learned
-- Delegation of Control Wizard produces cleaner ACLs than manual dsacls.
-- Move operations require permissions on **both** source and target OUs.
-- “Protect object from accidental deletion” must be disabled on source/target OUs for moves to succeed.
-- Always perform a logoff/logon on the client after delegation changes.
-
-## Related Files:
-- [Delegation Overview](delegation-overview.md)
-- [Delegate User Moves](delegate-user-moves.md)
-- [Helpdesk Delegation Runbook](../runbooks/helpdesk-delegation-runbook.md)
+## Related Files
+- [Delegation Overview & Strategy](delegation-overview.md)

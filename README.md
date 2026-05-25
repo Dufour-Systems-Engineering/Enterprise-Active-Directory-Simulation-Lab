@@ -19,9 +19,9 @@ The project was built to simulate real corporate Active Directory Domain Service
 * **[architecture/](architecture/)** — Conceptual domain design blueprints, infrastructure mapping, and visual topology.
 * **[docs/](docs/)** — Core engineering documentation
   * **[runbooks/](docs/runbooks/README.md)** — (Recommended starting point) Step-by-step administrative execution guides, logic verification, and project roadmaps.
-  * **[delegation/](docs/delegation/)** — Least-privilege administrative boundary definitions and RBAC rules.
+  * **[delegation/](./docs/delegation/)** — Two-tier Help Desk & IT Admin delegation model, testing results, and future expansion plans.
   * **[gpo/](docs/gpo/)** — Baseline policy configurations, registry overrides, and client enforcement rulesets.
-  * **[troubleshooting/](docs/troubleshooting/)** — Real-world and simulated break/fix scenarios with root cause analysis *(5 articles published as of May 23, 2026 — actively expanding)*.
+  * **[troubleshooting/](./docs/troubleshooting/)** — Real break/fix scenarios and resolutions (e.g., RDP access issues, permission problems). *(6 articles published as of May 25, 2026 — actively expanding)*.
 * **[evidence/](evidence/)** — Supporting artifacts and raw documentation:
   * `raw-tickets/` — Original raw SDESK service desk tickets
   * `jira-project-export-pdfs/` — Exported Jira tickets and project data

@@ -1,4 +1,16 @@
 # CHANGELOG
+## [2026-05-25] - Delegation Folder Completion & Troubleshooting Updates
+
+### Added
+- Completed `docs/delegation/` folder with three focused documents:
+  - `delegation-overview.md`
+  - `helpdesk-delegation-testing-results.md`
+  - `future-delegation-expansion.md`
+- New troubleshooting document: `sdesk-6-rdp-admin-access-denied.md`
+- Corresponding screenshots for RDP admin access issue
+
+### Updated
+- Root README.md to reflect new delegation and troubleshooting content
 
 ## [2026-05-23] - Troubleshooting Section Launch + Evidence Organization
 

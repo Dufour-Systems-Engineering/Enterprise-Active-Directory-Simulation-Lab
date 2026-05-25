@@ -1,45 +1,31 @@
 # Delegation Overview & Strategy
-
-**Last Updated:** May 19, 2026  
+**Last Updated:** May 24, 2026
 **Domain:** lab.local
 
 ## Objective
-Implement least-privilege delegation following AGDLP best practices:
-- Limited Tier 1 rights for Help Desk
-- Broader administrative rights for IT Admins
+This lab implements a **two-tier delegation model** for Help Desk and IT Admin users as part of a realistic mid-sized enterprise Active Directory simulation. The design aligns with AGDLP principles and focuses on least-privilege access to support practical learning in delegated administration.
 
 ## Delegation Model
 
-### 1. Help Desk (Tier 1) – Limited Rights
-- Group: `GG_HelpDesk_Users`
-- Applied to: Departmental `Users` OUs
-- Rights Granted:
-  - Reset password + force change at next logon
-  - Read and write all user properties
-  - Unlock user accounts
+### Help Desk (Tier 1)
+- **Group**: `GG_HelpDesk_Users`
+- **Scope**: Departmental `Users` OUs (Sales, Engineering, Finance, HR)
+- **Rights**: Password reset (with force change at next logon), account unlock, and read/write user properties.
 
-**Important Note on Scope:**  
-Although some screenshots and testing (particularly KAN-98) show HelpdeskNew performing user moves and deletes, these operations were executed **only during the pilot/testing phase**. In the final design, **Create and Delete** permissions are reserved exclusively for `GG_IT_Admins`. Help Desk was intentionally used as the test account to validate the delegation process before tightening the scope.
+### IT Admins (Tier 2)
+- **Group**: `GG_IT_Admins`
+- **Scope**: Departmental `Users` OUs plus privileged OUs (Help Desk, IT Admins, Managers)
+- **Rights**: Full Control (`GenericAll`) on target OUs and descendant objects.
 
-### 2. IT Admins – Broad Rights
-- Group: `GG_IT_Admins`
-- Applied to: Departmental `Users` OUs
-- Rights Granted:
-  - Full Control on departmental `Users` OUs
-  - Full ability to create, delete, and move user objects
+**Design Philosophy**: Tier 1 is intentionally limited to common daily support tasks. Tier 2 provides the elevated rights necessary for structural changes and bulk operations. Global groups handle user membership and are nested into Domain Local groups for clean, scalable permission assignment.
 
-**Purpose:** Enable senior administrators to perform escalated tasks while keeping Help Desk strictly limited.
+## Current Implementation State
+The two-tier model is fully operational across main departmental OUs. Delegation was implemented using the Active Directory Delegation of Control Wizard supplemented by PowerShell for precise ACL control. An isolated Test OU was used extensively for safe validation before applying changes to production OUs.
 
-## Key Design Decisions
+**Current Limitations**: Manager-level self-service delegation and granular attribute-level controls have not yet been implemented. The existing foundation is structured to support these expansions.
 
-- Delegation of Control Wizard was used for cleaner ACLs.
-- Permissions scoped at the departmental `Users` OU level.
-- "Protect object from accidental deletion" handling documented as a prerequisite for moves.
-- Positive testing in isolated Test OU; negative testing in production departments.
+This implementation demonstrates core enterprise delegation concepts suitable for learning and portfolio purposes.
 
 ## Related Files
 - [Helpdesk Delegation Testing Results](helpdesk-delegation-testing-results.md)
-- [Delegate User Moves](delegate-user-moves.md)
-- [Helpdesk Delegation Runbook](../runbooks/helpdesk-delegation-runbook.md)
-
----
+- [Future Delegation Expansion](future-delegation-expansion.md)
