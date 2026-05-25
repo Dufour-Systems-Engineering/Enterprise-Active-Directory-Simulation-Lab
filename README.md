@@ -34,22 +34,23 @@ The project was built to simulate real corporate Active Directory Domain Service
 **This portfolio is actively maintained.**  
 New runbooks, evidence files, scripts, and troubleshooting articles are added as they are completed to show real-time progress to recruiters and hiring managers.
 
-**Completed as of May 23, 2026:**
+**Completed as of May 25, 2026:**
 - Architecture folder
-- Delegation folder
+- Delegation folder (3 documents)
 - GPO folder
 - Runbooks folder (9 completed runbooks)
-- Troubleshooting folder (5 polished articles)
+- Troubleshooting folder (6 polished articles)
 - Evidence folder structure with raw tickets and Jira exports
 
 **In Progress / Content Ready:**
+- Evidence folder (raw tickets, Jira exports, and new subfolders being populated)
 - Remaining runbooks (Engineering User Onboarding, Tier 1 Support Delegation, User Onboarding)
 - Additional troubleshooting articles
 - Full `scripts/` folder
 
 Every new file will be committed immediately upon completion so you can watch the portfolio grow live.
 
-**Last Updated:** May 23, 2026  
+**Last Updated:** May 25, 2026  
 **Status:** Initial public release + Troubleshooting & Evidence sections launched
 
 ---
